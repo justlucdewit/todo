@@ -5,7 +5,9 @@
       <router-link to="/Todo">To-do</router-link> |
       <router-link to="/github">github</router-link>
     </div>
-    <router-view/>
+    <b-container>
+      <router-view />
+    </b-container>
   </div>
 </template>
 
