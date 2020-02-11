@@ -1,6 +1,6 @@
 <template>
   <div>
-    <typingbar v-model="newValue" />
+    <typingbar v-model="newValue" :addItem="addItem"/>
     <todolist :items="todoitems" />
   </div>
 </template>
@@ -12,9 +12,16 @@ import typingbar from "@/components/typingbar";
 export default {
   data() {
     return {
-      todoitems: ["finish todo app", "sleep", "look on reddit", "go to music repetition", "english homework"],
+      todoitems: [],
       newValue: ""
     };
+  },
+
+  methods: {
+    addItem: function() {
+      this.todoitems.push(this.newValue);
+      this.newValue = "";
+    }
   },
 
   components: {
